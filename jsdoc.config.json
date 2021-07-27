@@ -1,0 +1,8 @@
+{
+  "source": {
+    "include": "./src",
+    "includePattern": ".+\\index.js(doc|x)?$",
+    "excludePattern": "(node_modules/|docs)",
+    "exclude":["./src/index.js","./src/worker-echarts/save-json/index.js"]
+  }
+}
