@@ -4,6 +4,6 @@ npm-debug.log
 npm-debug.log.*
 !.gitkeep
 .vscode
-docs/
 dist/
+coverage/
 

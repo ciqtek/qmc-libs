@@ -1,11 +1,4 @@
-/*
- * @Author: your name
- * @Date: 2021-07-26 09:32:59
- * @LastEditTime: 2021-07-26 09:58:48
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: \qmc-libs\src\worker-ws-client\index.worker.js
- */
+
 
 /**
  * websocket worker

@@ -1,27 +1,28 @@
-/*
- * @Author: your name
- * @Date: 2021-07-26 10:43:13
- * @LastEditTime: 2021-07-26 17:55:11
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \qmc-libs\types\types.d.ts
- */
-declare module 'qmc-libs'
 
 
-import { CiqTCPClient } from "./tcp-client"
 
-import { CiqTranscoder } from "./transcoder"
+export declare class WorkerWsClient {
+  //worker 实例
+  _worker?: Worker
 
-import { CiqWorkerECharts } from "./worker-echarts"
+  //存储promise队列
+  _promise?: Object
 
-import { CiqWorkerWsClient } from "./worker-ws-client"
+  //init websocket
+  init(websocketUrl: string): void
 
+  /**
+   *  send message
+   * @param params  type message
+   * @param asyncCallback  callback
+   */
+  send(params: Object, asyncCallback: void): void
 
-export declare class TcpClient extends CiqTCPClient { }
+  /**
+   * _worker.postMessage
+   * @param message 
+   *  
+   */
+  postMessage(message: Object): void
 
-export declare class Transcoder extends CiqTranscoder { }
-
-export declare class WorkerECharts extends CiqWorkerECharts { }
-
-export declare class WorkerWsClient extends CiqWorkerWsClient { }
+}

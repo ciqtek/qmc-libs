@@ -1,23 +1,20 @@
 {
-  "name": "qmc-libs",
+  "name": "worker-ws-client",
   "version": "0.0.1",
-  "description": "Ciqtek Electron 前端工具库",
-  "main": "dist/qmc-libs.js",
-  "types":"types/index.d.ts",
+  "description": "worker for  websocket",
+  "main": "dist/worker-ws-client.js",
+  "types": "types/index.d.ts",
   "scripts": {
-    "build:components": "rollup -c ./build/rollup.config.components.js",
-    "build:umd": "rollup -c ./build/rollup.config.prod.js",
-    "build:dist": "rollup -c ./build/rollup.config.prod.js && rollup -c ./build/rollup.config.components.js",
-    "build:doc":"jsdoc2md -t ./README.hbs ./src/**/index.js > README.md",
-    "test": "npm run build:umd && jest"
+    "build": "rollup -c rollup.config.js",
+    "build:doc": "jsdoc2md -t ./README.hbs ./src/index.js > README.md",
+    "test": "npm run build && jest"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ciqtek/qmc-libs.git"
+    "url": "https://github.com/ciqtek/worker-ws-client.git"
   },
   "keywords": [
     "webworker",
-    "echarts",
     "websocket"
   ],
   "files": [
@@ -40,6 +37,8 @@
     "babel-jest": "^27.0.6",
     "jest": "^27.0.6",
     "jsdoc-to-markdown": "^7.0.1",
+    "jsdom-worker": "^0.2.1",
+    "node-fetch": "^2.6.1",
     "rollup": "^2.53.1",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.5",
@@ -48,10 +47,5 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-web-worker-loader": "^1.6.1",
     "typescript": "^4.3.5"
-  },
-  "dependencies": {
-    "axios": "^0.21.1",
-    "dom-to-image": "^2.6.0",
-    "jszip": "^3.6.0"
   }
 }

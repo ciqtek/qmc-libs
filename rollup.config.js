@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-22 17:28:44
- * @LastEditTime: 2021-07-26 20:03:00
+ * @LastEditTime: 2021-07-28 09:01:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Electron-Basic-Library\build\rollup.config.dev.js
@@ -16,7 +16,7 @@ import { babel } from '@rollup/plugin-babel'
 import webWorker from "rollup-plugin-web-worker-loader"
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from "@rollup/plugin-commonjs"
-import nodePlugins from "rollup-plugin-node-polyfills"
+//import nodePlugins from "rollup-plugin-node-polyfills"
 import { terser } from 'rollup-plugin-terser';
 import json from "@rollup/plugin-json"
 
@@ -24,7 +24,7 @@ import json from "@rollup/plugin-json"
 
 // 返回文件的绝对路径
 const resolveFile = function (filename) {
-  return path.join(__dirname, '..', filename);
+  return path.join(__dirname, filename);
 }
 let plugins = [
   json(),
@@ -53,9 +53,9 @@ let plugins = [
 const rollupConfig = {
   input: resolveFile("src/index.js"),
   output: {
-    file: resolveFile(`dist/qmc-libs.js`),
+    file: resolveFile(`dist/worker-ws-client.js`),
     format: 'umd',
-    name: `qmc-libs.js`,
+    name: `worker-ws-client.js`,
   },
   plugins
 }

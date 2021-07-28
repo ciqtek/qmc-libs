@@ -7,19 +7,24 @@
 ### 安装
 
 ```bash
-  npm i install qmc-libs --save-dev or yarn add qmc-libs --save-dev
+  npm i install worker-ws-client --save-dev or yarn add worker-ws-client --save-dev
 ```
 
 ### 使用
 
 ```js
-import { 
-  TCPClient,
-  Transcoder,
-  WorkerWsClient,
-  WorkerEcharts } from "qmc-libs"
-or
-import qmcLibs from "qmc-libs"
+import WorkerWsClient from "worker-ws-client"
+
+
+class WsClient extends WorkerWsClient {
+  constructor(){
+    super()
+    this._worker.addEventListener('message', e => {
+      
+    })
+  }
+}
+
 ```
 
 ### 📖 文档
